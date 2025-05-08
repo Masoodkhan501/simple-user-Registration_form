@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:inline="text">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" th:href="@{/css/output.css}">
+</head>
+<body class="min-h-screen flex flex-col ">
+    <div class="flex flex-col flex-grow" >
+        <div class="head flex bg-green-800/70 p-3 justify-between">
+            <header class="flex">
+                <img th:src="@{/Emblem_of_Telangana.svg.png}" alt="Emblem_of_Telangana" class="w-auto h-12">
+                <p class="text-2xl md:text-3xl content-center pl-3">Governament of Telangana</p>
+            </header>
+            <nav class="content-center">
+                <div class="menulogo items-center flex-col pl-3 md:hidden">
+                    <div class="border border-white m-1 w-5"></div>
+                    <div class="border border-white m-1 w-5"></div>
+                    <div class="border border-white m-1 w-5"></div>
+                </div>
+                <div class="menu hidden md:flex">
+                    <ul class="md:flex">
+                        <li class="p-2 hover:underline hover:underline-offset-4">Home</li>
+                        <li class="p-2 hover:underline hover:underline-offset-4">About us</li>
+                        <li class="p-2 hover:underline hover:underline-offset-4">Contact us</li>
+                        <li class="p-2 hover:underline hover:underline-offset-4">Upcoming Schemes</li>
+                        <li class="p-2 hover:underline hover:underline-offset-4">Scholarship</li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <main class=" flex flex-grow bg-green-50">
+            <div class="form w-[80vw] md:w-[60vw] m-auto p-10 shadow-xl md:py-20 md:px-30 shadow-gray-400 justify-center bg-white">
+                <form action="/save/register" method="post" th:object="${user}">
+                    <p class="text-center mb-5 text-2xl md:mb-10 md:text-4xl">User Registration Form</p>
+                    <input type="text" th:field="*{name}" placeholder="Name" class="border w-full px-2 py-1 rounded-lg border-gray-400 my-2 focus:outline-green-800/70" required autofocus>
+                    <input type="email" th:field="*{email}" placeholder="E-mail" class="border w-full px-2 py-1 rounded-lg  border-gray-400 my-2  focus:outline-green-800/70" required>
+                    <input type="password" th:field="*{password}" placeholder="Password" class="border w-full px-2 py-1 rounded-lg  border-gray-400 my-2  focus:outline-green-800/70" required>
+                    <input type="submit" class="border w-full rounded-lg border-white bg-green-800 py-1 hover:bg-green-800/70 my-2 text-white hover:text-black">
+                </form>
+            </div>
+        </main>
+        <footer class="md:bg-green-800/70 p-5">
+            <hr class="md:hidden">
+            <P class="text-center ">2025 Telangana Governament</P>
+        </footer>
+    </div>
+</body>
+</html>
