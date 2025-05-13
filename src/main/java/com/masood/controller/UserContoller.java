@@ -24,7 +24,7 @@ public class UserContoller
 	{
 		User u = new User();
 		model.addAttribute("user", u);
-		return "register_user";
+		return "index";
 	}
 	
 	@PostMapping("/save/register")
